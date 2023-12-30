@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfileActivity"
+    android:orientation="vertical"
+    style="@style/ActivityBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:background="@color/midGreen">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/back"
+                android:src="@drawable/baseline_arrow_back_24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:id="@+id/userToolBarName"
+                android:textSize="20sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/white1"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/baseline_edit_24"
+            android:id="@+id/editUserBtn"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Role"
+                android:id="@+id/userRole"
+                style="@style/TextColor"
+                android:textSize="26sp"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="100dp"
+                        android:backgroundTint="@color/midGreen">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="50dp">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/profile_background_playstore"
+                                android:scaleType="centerCrop"
+                                android:id="@+id/userProfileImg"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Firstname M. Lastname"
+                        android:textSize="18sp"
+                        android:id="@+id/userCompleteName"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age, Sex"
+                        android:textSize="16sp"
+                        android:id="@+id/userAgeAndSex"
+                        android:fontFamily="@font/montserrat"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_green_corner_bg"
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Reports"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@color/white1"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:id="@+id/userReportCount"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="@color/white1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                style="@style/CardBackground"
+                android:layout_marginTop="12dp"
+                android:gravity="start"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Baranggay"
+                        android:textColor="@color/midGreen"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.5"
+                        style="@style/DividerColor"
+                        android:layout_marginRight="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="barangay"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/montserrat"
+                        android:id="@+id/userBaranggay"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Municipality"
+                        android:textColor="@color/midGreen"
+                        android:textSize="17sp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.5"
+                        style="@style/DividerColor"
+                        android:layout_marginRight="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="municipality"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat"
+                        android:id="@+id/userMunicipality"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Province"
+                        android:textColor="@color/midGreen"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="31dp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.5"
+                        style="@style/DividerColor"
+                        android:layout_marginRight="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="province"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/montserrat"
+                        android:id="@+id/userProvince"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                style="@style/CardBackground"
+                android:layout_marginTop="12dp"
+                android:gravity="start"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/baseline_local_phone_24"
+                        android:layout_marginRight="10dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.5"
+                        style="@style/DividerColor"
+                        android:layout_marginRight="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09xxxxxxxxx"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/montserrat"
+                        android:id="@+id/userPhoneNumber"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/baseline_email_24"
+                        android:layout_marginRight="10dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.5"
+                        style="@style/DividerColor"
+                        android:layout_marginRight="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="user@gmail.com"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat"
+                        android:id="@+id/userEmail"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/baseline_lock_24"
+                        android:layout_marginRight="10dp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.5"
+                        style="@style/DividerColor"
+                        android:layout_marginRight="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="cl********"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/montserrat"
+                        android:id="@+id/userPassword"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

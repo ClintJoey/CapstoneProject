@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminDashboardActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/homeToolbar"
+        android:background="@color/midGreen"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Admin Dashboard"
+        app:logo="@drawable/pasture_pal_24"
+        app:titleTextColor="@color/transparent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/homeToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/primary_button"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/adminGreeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Welcome to Admin Panel"
+                    android:textColor="@color/white1"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/adminName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/adminGreeting"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="end"
+                    android:text="Manager Firstname"
+                    android:textColor="@color/white1"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <!--    Pie Graph Here    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Users"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="24sp"
+                    style="@style/TextColor"
+                    android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        style="@style/CardBackground"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/employeeText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Employee"
+                            android:textColor="@color/midGreen"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/employeeCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/employeeText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            style="@style/TextColor"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        style="@style/CardBackground"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/developerText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Admin"
+                            android:textColor="@color/midGreen"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/adminCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/developerText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            style="@style/TextColor"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        style="@style/CardBackground"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/managerText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Manager"
+                            android:textColor="@color/midGreen"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/managerCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/managerText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            style="@style/TextColor"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="8dp">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="View Users"
+                            android:textColor="@color/white1"
+                            android:id="@+id/viewUsers"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textSize="14sp"
+                            android:background="@drawable/primary_button"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Plant Reports"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="24sp"
+                    style="@style/TextColor"
+                    android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/gmelina_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/gmelinaText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Gmelina"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/gmelinaCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/gmelinaText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/balinghoy_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/balinghoyText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Balinghoy"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/balinghoyCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/balinghoyText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/hagunoy_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/hagunoyText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Hagunoy"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/hagunoyCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/hagunoyText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/monggo_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/monggoText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Monggo"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/monggoCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/monggoText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/talahib_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/talahibText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Talahib"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/talahibCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/talahibText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/ipil_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/ipilText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Ipil-Ipil"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/ipilCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ipilText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/patani_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/pataniText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Patani"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/pataniCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/pataniText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="8dp">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="View Reports"
+                            android:textColor="@color/white1"
+                            android:id="@+id/viewReports"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textSize="14sp"
+                            android:background="@drawable/primary_button"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="end">
+
+                    <Spinner
+                        android:id="@+id/plantSpinner"
+                        style="@style/Spinner"
+                        android:paddingRight="30dp"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawSelectorOnTop="true"
+                        android:entries="@array/poisonous_plants_spinner"
+                        android:layout_marginRight="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/monthSpinner"
+                        style="@style/Spinner"
+                        android:paddingRight="30dp"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawSelectorOnTop="true"
+                        android:layout_marginRight="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/yearSpinner"
+                        style="@style/Spinner"
+                        android:paddingRight="35dp"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawSelectorOnTop="true"/>
+                </LinearLayout>
+
+                <!--    Line Graph Here    -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    style="@style/CardBackground"
+                    android:padding="8dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="8dp">
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/reportChart"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/lavenderColor"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gmelina"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/blueColor"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Balinghoy"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/midGreen"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hagunoy"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/orangeColor"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monggo"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/dangerColor"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Talahib"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/brownColor"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ipil-Ipil"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/pureBlue"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Patani"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/CardBackground"
+                    android:id="@+id/adminOnly"
+                    android:padding="8dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Plant Records"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="24sp"
+                        style="@style/TextColor"
+                        android:layout_marginBottom="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/talahib_bg"
+                            android:padding="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="Harmful Plants"
+                                android:textColor="@color/white1"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical|end">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:id="@+id/harmfulPlantsCount"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/white1"
+                                    android:layout_marginRight="5dp"/>
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/poisonous"/>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="View Plants"
+                                android:id="@+id/viewHarmfulPlants"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white1"
+                                android:fontFamily="@font/montserrat"
+                                android:textSize="14sp"
+                                android:layout_marginTop="20dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/hagunoy_bg"
+                            android:padding="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="Benefecial Plants"
+                                android:textColor="@color/white1"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical|end">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:id="@+id/beneficialPlantsCount"
+                                    android:textColor="@color/white1"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:textSize="20sp"
+                                    android:layout_marginRight="5dp"/>
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/baseline_grass_24"/>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="View Plants"
+                                android:id="@+id/viewBeneficialPlants"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white1"
+                                android:fontFamily="@font/montserrat"
+                                android:textSize="14sp"
+                                android:layout_marginTop="20dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gmelina_bg"
+                            android:padding="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="Plant Toxins"
+                                android:textColor="@color/white1"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical|end">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:id="@+id/plantToxinsCount"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/white1"
+                                    android:layout_marginRight="5dp"/>
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/danger"/>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="View Toxins"
+                                android:id="@+id/viewPlantToxins"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white1"
+                                android:fontFamily="@font/montserrat"
+                                android:textSize="14sp"
+                                android:layout_marginTop="20dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/balinghoy_bg"
+                            android:padding="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="Plant Nutrients"
+                                android:textColor="@color/white1"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical|end">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:id="@+id/nutrientsCount"
+                                    android:textColor="@color/white1"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:textSize="20sp"
+                                    android:layout_marginRight="5dp"/>
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:src="@drawable/nutrient"/>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="View Nutrients"
+                                android:id="@+id/viewPlantNutrients"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white1"
+                                android:fontFamily="@font/montserrat"
+                                android:textSize="14sp"
+                                android:layout_marginTop="20dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CapstoneProject" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/midGreen</item>
+        <item name="colorPrimaryVariant">@color/gray1</item>
+        <item name="colorOnPrimary">@color/midGreen</item>
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
+    <style name="TextColor"><item name="android:textColor">@color/white1</item></style>
+    <style name="DividerColor"><item name="android:background">@color/white2</item></style>
+    <style name="PasturePalText"><item name="android:src">@drawable/pasture_pal</item></style>
+
+    <style name="EditTextColor"><item name="android:background">@drawable/custom_edittext_night</item></style>
+    <style name="EditTextBlack"><item name="android:background">@drawable/custom_edittext_black</item></style>
+
+    <style name="Spinner"><item name="android:background">@drawable/spinner_style_night</item></style>
+    <style name="CameraSwitch">
+        <item name="android:background">@drawable/icon_button_night</item>
+        <item name="android:src">@drawable/baseline_cameraswitch_24_night</item>
+    </style>
+    <style name="BottomSheetAdd">
+        <item name="android:background">@drawable/icon_button_night</item>
+        <item name="android:src">@drawable/baseline_add_24_night</item>
+    </style>
+    <style name="BottomSheetInfo">
+        <item name="android:background">@drawable/icon_button_night</item>
+        <item name="android:src">@drawable/baseline_find_in_page_24_night</item>
+    </style>
+    <style name="BottomSheet">
+        <item name="android:background">@drawable/icon_button_night</item>
+        <item name="android:src">@drawable/baseline_assignment_late_24_night</item>
+    </style>
+    <style name="ReportLists"><item name="android:background">@drawable/report_list_bg_night</item></style>
+    <style name="BottomSheetStyle"><item name="android:background">@drawable/dialog_bkg_night</item></style>
+    <style name="RemoveStyle"><item name="android:background">@drawable/baseline_remove_24_night</item></style>
+    <style name="FabStyle"><item name="android:backgroundTint">@color/midGreen</item></style>
+    <style name="IconButton"><item name="android:background">@drawable/icon_button</item></style>
+    <style name="PrimaryButtonColor"><item name="android:color">@color/gray1</item></style>
+    <style name="PrimaryButton"><item name="android:background">@drawable/primary_button_night</item></style>
+    <style name="TextButtonColor"><item name="android:color">@color/midGreen</item></style>
+    <style name="CardBackground"><item name="android:background">@drawable/custom_card_view_night</item></style>
+    <style name="UpdateBg"><item name="android:background">@drawable/update_acc_bg_night</item></style>
+
+    <style name="DialogBg"><item name="android:background">@drawable/dialog_bg_night</item></style>
+    <style name="RecItemBg"><item name="android:background">@drawable/rec_item_bg_night</item></style>
+    <style name="SearchBg"><item name="android:background">@drawable/search_bg_night</item></style>
+    <style name="ActivityBackground"><item name="android:background">@color/black1_5</item></style>
+
+    <style name="sideNavItemHighlight"><item name="android:color">@color/gray1</item></style>
+
+</resources>

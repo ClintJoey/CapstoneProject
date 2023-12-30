@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardFragment"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="24sp"
+                style="@style/TextColor"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/gmelina_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/gmelinaText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Gmelina"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/gmelinaCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/gmelinaText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/balinghoy_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/cassavaText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Balinghoy"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/balinghoyCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/cassavaText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/hagunoy_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/hagunoyText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Hagunoy"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/hagunoyCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/hagunoyText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/monggo_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/monggoText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Monggo"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/monggoCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/monggoText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/talahib_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/talahibText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Talahib"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/talahibCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/talahibText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/ipil_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/ipilText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Ipil-Ipil"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/ipilCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ipilText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/patani_bg"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/pataniText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="Patani"
+                            android:textColor="@color/white1"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/pataniCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/pataniText"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="@color/white1"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="8dp">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="View Reports"
+                            android:textColor="@color/white1"
+                            android:id="@+id/viewUserReportsBtn"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textSize="14sp"
+                            android:background="@drawable/primary_button"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="end">
+
+                    <Spinner
+                        android:id="@+id/plantSpinner"
+                        style="@style/Spinner"
+                        android:paddingRight="30dp"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawSelectorOnTop="true"
+                        android:entries="@array/poisonous_plants_spinner"
+                        android:layout_marginRight="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/monthSpinner"
+                        style="@style/Spinner"
+                        android:paddingRight="30dp"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawSelectorOnTop="true"
+                        android:layout_marginRight="8dp"/>
+
+                    <Spinner
+                        android:id="@+id/yearSpinner"
+                        style="@style/Spinner"
+                        android:paddingRight="35dp"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawSelectorOnTop="true"/>
+                </LinearLayout>
+
+                <!--    Line Graph Here    -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    style="@style/CardBackground"
+                    android:padding="8dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp">
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/userReportChart"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/lavenderColor"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gmelina"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/blueColor"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Balinghoy"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/midGreen"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hagunoy"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/orangeColor"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monggo"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="70dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/dangerColor"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Talahib"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/brownColor"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ipil-Ipil"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@color/pureBlue"
+                            android:layout_marginEnd="5dp">
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Patani"
+                            android:fontFamily="@font/montserrat"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

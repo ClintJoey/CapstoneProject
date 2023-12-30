@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">PasturePal</string>
+    <string name="app_ver">Version 1.0</string>
+    <string-array name="model_array">
+        <item>yolov8n</item>
+        <item>yolov8s</item>
+    </string-array>
+
+    <string-array name="cpugpu_array">
+        <item>CPU</item>
+        <item>GPU</item>
+    </string-array>
+
+    <string-array name="months_filter">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>July</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+
+    <string-array name="years_filter">
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+    </string-array>
+
+    <string-array name="poisonous_plants">
+        <item>Gmelina</item>
+        <item>Cassava</item>
+        <item>Ipil-ipil</item>
+        <item>Hagunoy</item>
+        <item>Talahib</item>
+        <item>Monggo</item>
+        <item>Patani</item>
+    </string-array>
+
+    <string-array name="poisonous_plants_spinner">
+        <item>All</item>
+        <item>Gmelina</item>
+        <item>Balinghoy</item>
+        <item>Ipil-ipil</item>
+        <item>Hagunoy</item>
+        <item>Talahib</item>
+        <item>Monggo</item>
+        <item>Patani</item>
+    </string-array>
+
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    <string name="select_plant">Select Plant</string>
+    <string name="pasture_pal_desc1">   PasturePal is a mobile application developed for helping farmers identifying poisonous and harmful plants to goats. The mobile app has the ability to detect certain species of plants and provide information of the detected plant expanding the knowledge of the user.</string>
+    <string name="pasture_pal_desc2">   The mobile app is only limited to the 7 common poisonous and harmful wild plants that can be found in the Philippines and these plants are the following:</string>
+    <string name="pasture_pal_desc3">   This is only the first version of the application and the number of plants that can be detected can further be enhanced by future developers.</string>
+    <string name="about_us">\t\t\t\tPasturePal is a cutting-edge mobile application designed to safeguard the well-being of goats by utilizing YOLOv8 model for accurate detection of seven common poisonous and harmful wild plants. With a commitment to goat health, PasturePal not only identifies potential threats but also provides detailed information about these plants, empowering users with knowledge to protect their livestock. Additionally, the app offers valuable insights into beneficial plants for goats, ensuring a comprehensive and informed approach to pasture management. Elevate your goat farming experience with PasturePal\'s advanced detection and educational features.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
