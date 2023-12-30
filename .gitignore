@@ -9,7 +9,10 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
+/release
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+/src/main/jni/ncnn-20230517-android-vulkan
+/src/main/jni/opencv-mobile-4.6.0-android
