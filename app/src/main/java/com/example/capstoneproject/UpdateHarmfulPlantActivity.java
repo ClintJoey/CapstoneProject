@@ -313,6 +313,7 @@ public class UpdateHarmfulPlantActivity extends AppCompatActivity {
             AlertDialog dialog = builder.create();
             dialog.show();
 
+            // TODO: This is still not working
             for (Uri imageUri: uriArrayList) {
 
                 StorageReference imageRef = harmfulPlantImageRef.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));

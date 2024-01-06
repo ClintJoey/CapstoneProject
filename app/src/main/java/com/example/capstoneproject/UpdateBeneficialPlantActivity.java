@@ -207,6 +207,8 @@ public class UpdateBeneficialPlantActivity extends AppCompatActivity {
                     AlertDialog dialog = builder.create();
                     dialog.show();
 
+                    // TODO: This is still not working
+
                     for (Uri imageUri: uriArrayList) {
 
                         StorageReference imageRef = beneficialPlantsImagesRef.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
