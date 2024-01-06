@@ -157,7 +157,7 @@ public class ManageBeneficialPlantsActivity extends AppCompatActivity {
     private void searchLists(AdminBeneficialPlantAdapter adapter, String text) {
         ArrayList<BeneficialPlantModel> lists = new ArrayList<>();
         for (BeneficialPlantModel plant: beneficialPlantsArray) {
-            if (plant.getPlantName().toLowerCase().contains(text)) {
+            if (plant.getPlantName().toLowerCase().contains(text.toLowerCase())) {
                 lists.add(plant);
             }
         }

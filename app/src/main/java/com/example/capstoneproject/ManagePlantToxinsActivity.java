@@ -337,7 +337,7 @@ public class ManagePlantToxinsActivity extends AppCompatActivity {
     private void searchLists(ToxinsAdapter adapter, String text) {
         ArrayList<ToxinModel> lists = new ArrayList<>();
         for (ToxinModel toxin: toxinsArray) {
-            if (toxin.getToxinName().toLowerCase().contains(text)) {
+            if (toxin.getToxinName().toLowerCase().contains(text.toLowerCase())) {
                 lists.add(toxin);
             }
         }

@@ -299,7 +299,7 @@ public class ManagePlantNutrientsActivity extends AppCompatActivity {
     private void searchLists(AdminNutrientAdapter adapter, String text) {
         ArrayList<NutrientModel> lists = new ArrayList<>();
         for (NutrientModel nutrient: nutrientsArray) {
-            if (nutrient.getNutrientName().toLowerCase().contains(text)) {
+            if (nutrient.getNutrientName().toLowerCase().contains(text.toLowerCase())) {
                 lists.add(nutrient);
             }
         }

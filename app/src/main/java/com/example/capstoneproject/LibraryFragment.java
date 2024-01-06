@@ -103,7 +103,7 @@ public class LibraryFragment extends Fragment {
     private void searchLists(UserBeneficialPlantAdapter adapter, String text) {
         ArrayList<BeneficialPlantModel> lists = new ArrayList<>();
         for (BeneficialPlantModel plant: beneficialPlantArrays) {
-            if (plant.getPlantName().toLowerCase().contains(text)) {
+            if (plant.getPlantName().toLowerCase().contains(text.toLowerCase())) {
                 lists.add(plant);
             }
         }
