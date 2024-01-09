@@ -125,6 +125,7 @@ public class UpdateBeneficialPlantActivity extends AppCompatActivity {
             @Override
             public void onDeleteClick(int position) {
                 uriArrayList.remove(position);
+                imageStringArray.remove(position);
                 plantImagesAdapter.notifyItemRemoved(position);
             }
         });
@@ -207,45 +208,37 @@ public class UpdateBeneficialPlantActivity extends AppCompatActivity {
                     AlertDialog dialog = builder.create();
                     dialog.show();
 
-                    // TODO: This is still not working
-
                     for (Uri imageUri: uriArrayList) {
 
-                        StorageReference imageRef = beneficialPlantsImagesRef.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
-                        imageRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                            @Override
-                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                imageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                    @Override
-                                    public void onSuccess(Uri uri) {
-                                        imageStringArray.add(uri.toString());
+                        if (!imageUri.toString().substring(0, 23).equals("https://firebasestorage")) {
+                            StorageReference imageRef = beneficialPlantsImagesRef.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
+                            imageRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                @Override
+                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                    imageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                        @Override
+                                        public void onSuccess(Uri uri) {
+                                            imageStringArray.add(uri.toString());
 
-                                        if (imageStringArray.size() == uriArrayList.size()) {
-                                            BeneficialPlantModel model = new BeneficialPlantModel(imageStringArray, plantName, plantCommonNames, plantDesc, plantLocations, plantNutrients, plantNutrientsAmount);
+                                            if (imageStringArray.size() == uriArrayList.size()) {
+                                                BeneficialPlantModel model = new BeneficialPlantModel(imageStringArray, plantName, plantCommonNames, plantDesc, plantLocations, plantNutrients, plantNutrientsAmount);
 
-                                            beneficialPlantsRef.child(plantName).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
-                                                    if (task.isSuccessful()) {
-                                                        for (String image: imageStringArray) {
-                                                            StorageReference deleteImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
-                                                            deleteImageRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                                @Override
-                                                                public void onSuccess(Void unused) {
-                                                                    Log.d("demo", "Image deleted");
-                                                                }
-                                                            });
+                                                beneficialPlantsRef.child(plantName).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+                                                            Log.d("demo", "images done");
+                                                            Toast.makeText(UpdateBeneficialPlantActivity.this, plantName + " is updated successfully", Toast.LENGTH_SHORT).show();
+                                                            dialog.dismiss();
                                                         }
-                                                        Toast.makeText(UpdateBeneficialPlantActivity.this, plantName + " is updated successfully", Toast.LENGTH_SHORT).show();
-                                                        dialog.dismiss();
                                                     }
-                                                }
-                                            });
+                                                });
+                                            }
                                         }
-                                    }
-                                });
-                            }
-                        });
+                                    });
+                                }
+                            });
+                        }
                     }
                 }
             }
@@ -274,6 +267,7 @@ public class UpdateBeneficialPlantActivity extends AppCompatActivity {
     }
     private void setUIValues() {
         // set Images
+        imageStringArray = plantModel.getPlantImages();
         for (String image: plantModel.getPlantImages()) {
             if (image != null) {
                 Uri imageUri = Uri.parse(image);
