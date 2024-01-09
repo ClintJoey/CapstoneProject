@@ -108,7 +108,6 @@ public class ManageBeneficialPlantsActivity extends AppCompatActivity {
         beneficialPlantsArray = (ArrayList<BeneficialPlantModel>) intent.getSerializableExtra("beneficialPlantsArray");
     }
     private void openDeleteDialog(AdminBeneficialPlantAdapter adapter, int position) {
-        // pending create a delete dialog
         CardView deleteDialog = findViewById(R.id.deleteDialog);
         View view = LayoutInflater.from(ManageBeneficialPlantsActivity.this).inflate(R.layout.delete_confirmation_dialog, deleteDialog);
         TextView deleteDialogText = view.findViewById(R.id.deleteDialogText);

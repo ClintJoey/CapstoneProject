@@ -119,6 +119,15 @@ public class UpdateHarmfulPlantActivity extends AppCompatActivity {
         harmfulPlantsImages.setAdapter(plantImagesAdapter);
         plantImagesAdapter.notifyDataSetChanged();
 
+        plantImagesAdapter.setOnItemClickListener(new PlantImagesAdapter.onImagesListener() {
+            @Override
+            public void onDeleteClick(int position) {
+                uriArrayList.remove(position);
+                imageStringArray.remove(position);
+                plantImagesAdapter.notifyItemRemoved(position);
+            }
+        });
+
         addImagesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -313,44 +322,39 @@ public class UpdateHarmfulPlantActivity extends AppCompatActivity {
             AlertDialog dialog = builder.create();
             dialog.show();
 
-            // TODO: This is still not working
             for (Uri imageUri: uriArrayList) {
 
-                StorageReference imageRef = harmfulPlantImageRef.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
-                imageRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        imageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-                                imageStringArray.add(uri.toString());
+                if (!imageUri.toString().substring(0, 23).equals("https://firebasestorage")) {
+                    StorageReference imageRef = harmfulPlantImageRef.child(System.currentTimeMillis() + "." + getFileExtension(imageUri));
+                    imageRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            imageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    imageStringArray.add(uri.toString());
 
-                                if (uriArrayList.size() == imageStringArray.size()) {
-                                    HarmfulPlantModel plant = new HarmfulPlantModel(imageStringArray, plantName, plantCommonNames, plantDesc,
-                                            abundantLocations, harmfulParts, plantToxinsArray, plantGuidesArray);
+                                    if (uriArrayList.size() == imageStringArray.size()) {
+                                        HarmfulPlantModel plant = new HarmfulPlantModel(imageStringArray, plantName, plantCommonNames, plantDesc,
+                                                abundantLocations, harmfulParts, plantToxinsArray, plantGuidesArray);
 
-                                    harmfulPlantRef.child(plantName).setValue(plant).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            if (task.isSuccessful()) {
-                                                for (String image: imageStringArray) {
-                                                    StorageReference deleteImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
-                                                    deleteImageRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                        @Override
-                                                        public void onSuccess(Void unused) {
-                                                            Log.d("demo", "Image deleted");
-                                                        }
-                                                    });
+                                        harmfulPlantRef.child(plantName).setValue(plant).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    dialog.dismiss();
+                                                    Toast.makeText(UpdateHarmfulPlantActivity.this, plant.getPlantName() + " updated", Toast.LENGTH_SHORT).show();
                                                 }
                                             }
-                                        }
-                                    });
+                                        });
+                                    }
                                 }
-                            }
-                        });
-                    }
-                });
+                            });
+                        }
+                    });
+                }
             }
+
         }
     }
 
