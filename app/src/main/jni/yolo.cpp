@@ -139,7 +139,7 @@ static void generate_grids_and_stride(const int target_w, const int target_h, st
 static void generate_proposals(std::vector<GridAndStride> grid_strides, const ncnn::Mat& pred, float prob_threshold, std::vector<Object>& objects)
 {
     const int num_points = grid_strides.size();
-    const int num_class = 5;
+    const int num_class = 7;
     const int reg_max_1 = 16;
 
     for (int i = 0; i < num_points; i++)
@@ -356,8 +356,8 @@ int Yolo::detect(const cv::Mat& rgb, std::vector<Object>& objects, float prob_th
 int Yolo::draw(cv::Mat& rgb, const std::vector<Object>& objects)
 {
     static const char* class_names[] = {
-//            "Balinghoy", "Gmelina", "Hagunoy", "Ipil-Ipil", "Monggo", "Patani", "Talahib"
-            "Balinghoy", "Gmelina", "Hagunoy", "Ipil-Ipil", "Talahib"
+            "Balinghoy", "Gmelina", "Hagunoy", "Ipil-Ipil", "Monggo", "Patani", "Talahib"
+//            "Balinghoy", "Gmelina", "Hagunoy", "Ipil-Ipil", "Talahib"
 //            "person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat", "traffic light",
 //            "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse", "sheep", "cow",
 //            "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella", "handbag", "tie", "suitcase", "frisbee",
