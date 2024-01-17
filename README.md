@@ -3,6 +3,7 @@ PasturePal is a cutting-edge mobile application designed to safeguard the well-b
 
 Google Colab:
 https://colab.research.google.com/drive/1MgWCUBq6BefswrjfcV2XLTSmGvztlXqb#scrollTo=eFxdZu6GdOj8
+
 References:
 https://github.com/ultralytics/ultralytics
 https://github.com/Tencent/ncnn
